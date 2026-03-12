@@ -26,7 +26,7 @@ cleanup_logs() {
   fi
 
   # Удаление старых файлов
-  if ! find "$1" -type f -mtime +$2 -exec rm -f {} \;; then
+  if ! find "$1" -type f -mtime +"$2" -exec rm -f {} \;; then
     echo "Ошибка: не удалось удалить файлы "
     return 1
   fi
